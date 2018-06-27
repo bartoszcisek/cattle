@@ -236,7 +236,7 @@ public class AuthDaoImpl extends AbstractJooqDao implements AuthDao {
                 .where(
                         ACCOUNT.EXTERNAL_ID.eq(externalId)
                                 .and(ACCOUNT.EXTERNAL_ID_TYPE.eq(externalType))
-                                .and(ACCOUNT.STATE.ne("purged"))
+                                .and(ACCOUNT.STATE.eq("active"))
                 ).orderBy(ACCOUNT.ID.asc()).fetchOne();
     }
 
